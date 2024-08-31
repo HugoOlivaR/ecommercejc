@@ -166,6 +166,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                 >
                   <div className="w-full flex justify-end pr-6">
                     <button
+                    title="close menu"
                       onClick={close}
                       className="bg-white w-12 h-12 rounded-full text-ui-fg-base flex justify-center items-center"
                       data-testid="close-modal-button"

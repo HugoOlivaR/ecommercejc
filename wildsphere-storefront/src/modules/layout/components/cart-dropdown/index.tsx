@@ -72,12 +72,12 @@ const CartDropdown = ({
 
   return (
     <div
-      className="h-full z-50"
+      className="h-full z-0"
       onMouseEnter={openAndCancel}
       onMouseLeave={close}
     >
       <Popover className="relative h-full">
-        <Popover.Button className="h-full">
+        <Popover.Button className="h-full ease-linear duration-100">
           <LocalizedClientLink
             className="hover:text-ui-fg-base"
             href="/cart"
@@ -96,7 +96,7 @@ const CartDropdown = ({
         >
           <Popover.Panel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[420px] text-ui-fg-base"
+            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[420px] text-ui-fg-base rounded-xl"
             data-testid="nav-cart-dropdown"
           >
             <div className="p-4 flex items-center justify-center">

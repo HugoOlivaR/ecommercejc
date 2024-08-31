@@ -2,7 +2,9 @@ import { Product } from "@medusajs/medusa"
 import { Metadata } from "next"
 
 import { getCollectionsList, getProductsList, getRegion } from "@lib/data"
-import FeaturedProducts from "@modules/home/components/featured-products"
+import TypeProducts from "@modules/home/components/type-products"
+import OneProduct from "@modules/home/components/one-product"
+import ExploreProducts from "@modules/home/components/explore-products"
 import Hero from "@modules/home/components/hero"
 import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
@@ -65,13 +67,15 @@ export default async function Home({
   if (!collections || !region) {
     return null
   }
-
+  
   return (
     <>
       <Hero />
       <div className="py-12">
         <ul className="flex flex-col gap-x-6">
-          <FeaturedProducts collections={collections} region={region} />
+          <TypeProducts collections={collections} region={region} />
+          <OneProduct imageUrl="/imgs/modernCouch.webp" altText="Couch Image" />
+          <ExploreProducts collections={collections} region={region} />
         </ul>
       </div>
     </>

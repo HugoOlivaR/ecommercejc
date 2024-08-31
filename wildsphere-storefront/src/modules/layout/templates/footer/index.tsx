@@ -3,7 +3,6 @@ import { Text, clx } from "@medusajs/ui"
 import { getCategoriesList, getCollectionsList } from "@lib/data"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import MedusaCTA from "@modules/layout/components/medusa-cta"
 
 export default async function Footer() {
   const { collections } = await getCollectionsList(0, 6)
@@ -18,7 +17,7 @@ export default async function Footer() {
               href="/"
               className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
             >
-              Medusa Store
+              WildSphere
             </LocalizedClientLink>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
@@ -27,7 +26,10 @@ export default async function Footer() {
                 <span className="txt-small-plus txt-ui-fg-base">
                   Categories
                 </span>
-                <ul className="grid grid-cols-1 gap-2" data-testid="footer-categories">
+                <ul
+                  className="grid grid-cols-1 gap-2"
+                  data-testid="footer-categories"
+                >
                   {product_categories?.slice(0, 6).map((c) => {
                     if (c.parent_category) {
                       return
@@ -110,7 +112,7 @@ export default async function Footer() {
                   <a
                     href="https://github.com/medusajs"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener"
                     className="hover:text-ui-fg-base"
                   >
                     GitHub
@@ -120,7 +122,7 @@ export default async function Footer() {
                   <a
                     href="https://docs.medusajs.com"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener"
                     className="hover:text-ui-fg-base"
                   >
                     Documentation
@@ -130,7 +132,7 @@ export default async function Footer() {
                   <a
                     href="https://github.com/medusajs/nextjs-starter-medusa"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener"
                     className="hover:text-ui-fg-base"
                   >
                     Source code
@@ -144,7 +146,6 @@ export default async function Footer() {
           <Text className="txt-compact-small">
             © {new Date().getFullYear()} Medusa Store. All rights reserved.
           </Text>
-          <MedusaCTA />
         </div>
       </div>
     </footer>
