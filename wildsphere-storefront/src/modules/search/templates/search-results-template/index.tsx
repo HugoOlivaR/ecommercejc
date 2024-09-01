@@ -1,10 +1,19 @@
 import { Heading, Text } from "@medusajs/ui"
-import Link from "next/link"
+import { cache } from "react"
+import { getCollectionsList } from "@lib/data"
 
 import RefinementList from "@modules/store/components/refinement-list"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import PaginatedProducts from "@modules/store/templates/paginated-products"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+
+const getCollectionsWithProducts = cache(
+  async (): Promise<any[]> => {
+    const { collections } = await getCollectionsList(0, 6)
+
+    return collections || []
+  }
+)
 
 type SearchResultsTemplateProps = {
   query: string
@@ -14,7 +23,7 @@ type SearchResultsTemplateProps = {
   countryCode: string
 }
 
-const SearchResultsTemplate = ({
+const SearchResultsTemplate = async ({
   query,
   ids,
   sortBy,
@@ -22,6 +31,8 @@ const SearchResultsTemplate = ({
   countryCode,
 }: SearchResultsTemplateProps) => {
   const pageNumber = page ? parseInt(page) : 1
+
+  const collections = await getCollectionsWithProducts()
 
   return (
     <>
@@ -42,7 +53,7 @@ const SearchResultsTemplate = ({
       <div className="flex flex-col small:flex-row small:items-start p-6">
         {ids.length > 0 ? (
           <>
-            <RefinementList sortBy={sortBy || "created_at"} search />
+            <RefinementList sortBy={sortBy || "created_at"} collections={collections} />
             <div className="content-container">
               <PaginatedProducts
                 productsIds={ids}

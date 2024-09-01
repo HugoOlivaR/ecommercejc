@@ -22,23 +22,25 @@ export default function ProductRail({
             height={500} // Ajusta la altura según sea necesario
             className="object-cover" // Opcional: ajusta cómo se muestra la imagen
           />
-          <p className="font-normal font-sans txt-medium text-gray-400 mt-3">Arc Misty Grey Accent Chair</p>
+          <p className="font-normal font-sans txt-medium text-gray-400 mt-3">
+            Arc Misty Grey Accent Chair
+          </p>
         </li>
       </ul>
       <div className="flex flex-col mb-8 w-full md:w-3/5 lg:w-2/5 gap-5 order-1 md:order-2">
         <Text className="txt-medium text-xl-semi font-semibold font-archivo">
-          Urban Seat
+          Our Philosophy
         </Text>
         <p className="font-normal font-sans txt-medium text-gray-500">
-          Discover the perfect blend of comfort and style with an exclusive
-          range of accent chairs, sofas, ottomans and stools. Each piece is
-          meticulously designed to offer superior comfort and elevate your
-          space. Experience the difference with Seat Studio, where comfort meets
-          style.
+          Elevate your home with Widsphere&#39;s perfect blend of style, simplicity,
+          and affordability. Our exclusive collection of home accessories and
+          decor is designed to enhance your space effortlessly. Each item is
+          easy to install and budget-friendly, thanks to our direct partnerships
+          with manufacturers. Experience how Widsphere brings elegance and
+          convenience to your living environment, offering high-quality
+          solutions at accessible prices.
         </p>
-        <InteractiveLink href={`/store`}>
-          View all
-        </InteractiveLink>
+        <InteractiveLink href={`/store`}>View all</InteractiveLink>
       </div>
     </div>
   )

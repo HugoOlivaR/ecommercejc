@@ -1,5 +1,4 @@
 import { Product } from "@medusajs/medusa"
-import { Metadata } from "next"
 
 import { getCollectionsList, getProductsList, getRegion } from "@lib/data"
 import TypeProducts from "@modules/home/components/type-products"
@@ -9,10 +8,16 @@ import Hero from "@modules/home/components/hero"
 import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
 
-export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+export const metadata = {
+  title: "Widsphere - Home Decor & Everyday Essentials",
+  template: "%s | WILDSPHERE",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "Discover Widsphere, your go-to online store for stylish and functional home decor essentials. Shop small, everyday items that bring comfort and convenience to your home.",
+  keywords:
+    "home interior, furniture, decor, accessories, stylish home, premium products",
+  canonical: "https://wildsg.com/",
+  robots: "index, follow",
+  publisher: "WildSphere Inc.",
 }
 
 const getCollectionsWithProducts = cache(
@@ -67,7 +72,7 @@ export default async function Home({
   if (!collections || !region) {
     return null
   }
-  
+
   return (
     <>
       <Hero />

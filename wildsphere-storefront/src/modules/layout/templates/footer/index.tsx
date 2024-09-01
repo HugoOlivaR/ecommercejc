@@ -15,7 +15,7 @@ export default async function Footer() {
     <footer className="border-t border-ui-border-base w-full">
       <div className="content-container flex flex-col w-full">
         <div className="flex flex-col gap-10 xsmall:flex-row items-start justify-between py-40">
-          <div className="w-1/3 flex flex-col gap-8">
+          <div className="w-4/5 sm:w-1/3 flex flex-col gap-8">
             <LocalizedClientLink
               href="/"
               className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"

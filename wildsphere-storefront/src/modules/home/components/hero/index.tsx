@@ -32,7 +32,7 @@ const Hero = () => {
             </Heading>
           </span>
           <a
-            href="/collections/merch"
+            href="/store"
             rel="noopener"
             className="flex gap-2 items-center text-white py-2 px-3 border rounded-md hover:border-accent ease-linear duration-200"
           >

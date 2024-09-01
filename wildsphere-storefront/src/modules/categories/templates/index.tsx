@@ -9,7 +9,16 @@ import { SortOptions } from "@modules/store/components/refinement-list/sort-prod
 import PaginatedProducts from "@modules/store/templates/paginated-products"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
-export default function CategoryTemplate({
+import { getCollectionsList } from "@lib/data"
+import { cache } from "react"
+
+const getCollectionsWithProducts = cache(async (): Promise<any[]> => {
+  const { collections } = await getCollectionsList(0, 6)
+
+  return collections || []
+})
+
+export default async function CategoryTemplate({
   categories,
   sortBy,
   page,
@@ -27,9 +36,18 @@ export default function CategoryTemplate({
 
   if (!category || !countryCode) notFound()
 
+  const collections = await getCollectionsWithProducts()
+
   return (
-    <div className="flex flex-col small:flex-row small:items-start py-6 content-container" data-testid="category-container">
-      <RefinementList sortBy={sortBy || "created_at"} data-testid="sort-by-container" />
+    <div
+      className="flex flex-col small:flex-row small:items-start py-6 content-container"
+      data-testid="category-container"
+    >
+      <RefinementList
+        sortBy={sortBy || "created_at"}
+        data-testid="sort-by-container"
+        collections={collections}
+      />
       <div className="w-full">
         <div className="flex flex-row mb-8 text-2xl-semi gap-4">
           {parents &&
