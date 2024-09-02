@@ -68,7 +68,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
           onClick={closeModal}
         >
           <div
-            className="mx-10 w-96 xl:w-1/4"
+            className="mx-10 w-96 xl:w-1/3"
             onClick={(e) => e.stopPropagation()} // Prevent click events from propagating to the parent div
           >
             <div className="text-center">
