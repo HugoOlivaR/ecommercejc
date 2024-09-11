@@ -10,7 +10,7 @@ export default async function FeaturedProducts({
   region: Region;
 }) {
   // Accede al segundo elemento de la lista de colecciones (índice 1)
-  const collection = collections[1];
+  const collection = collections[0];
 
   // Renderiza solo la segunda colección si existe
   return collection ? (

@@ -36,6 +36,9 @@ export default function MailForm() {
           Submit
         </button>
       </div>
+      <label htmlFor="email" className="mt-4 mb-2 text-ui-fg-subtle text-sm">
+      For inquiries, email us at: <a href="mailto:wildspheregroup@gmail.com" className="underline">wildspheregroup@gmail.com</a>
+      </label>
     </form>
   )
 }

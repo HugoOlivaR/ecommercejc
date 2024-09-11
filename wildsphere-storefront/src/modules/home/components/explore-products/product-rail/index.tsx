@@ -23,8 +23,8 @@ export default function ProductRail({
       <div className="flex flex-col mb-8 gap-5 text-center justify-center items-center">
         <p className="font-normal font-sans  text-gray-700">Lastest Products</p>
         <Text className="text-3xl sm:text-4xl font-archivo leading-tight">
-          New arrivals to elevate your home <br className="hidden sm:flex" />
-          with style and comfort.
+          Our newest styles are here to help <br className="hidden sm:flex" />
+          you look your best.
         </Text>
 
         <a
